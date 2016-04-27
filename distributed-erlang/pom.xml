@@ -26,15 +26,15 @@ LICENSE file.
     <relativePath>../binding-parent</relativePath>
    </parent>
   
-   <artifactId>voldemort-binding</artifactId>
-   <name>Voldemort DB Binding</name>
+   <artifactId>distributed-erlang-binding</artifactId>
+   <name>Distributed Erlang Binding</name>
    <packaging>jar</packaging>
 	
    <dependencies>
      <dependency>
-       <groupId>voldemort</groupId>
-       <artifactId>voldemort</artifactId>
-       <version>${voldemort.version}</version>
+       <groupId>org.erlang.otp</groupId>
+       <artifactId>jinterface</artifactId>
+       <version>1.6.1</version>
      </dependency>
      <dependency>
        <groupId>log4j</groupId>
