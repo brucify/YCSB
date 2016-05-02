@@ -17,11 +17,9 @@
 
 package com.yahoo.ycsb.db;
 
-import java.lang.Override;
 import java.util.HashMap;
 import java.util.Set;
 import java.util.Vector;
-import java.util.Map.Entry;
 
 import org.apache.log4j.Logger;
 
@@ -29,14 +27,13 @@ import com.yahoo.ycsb.DB;
 import com.yahoo.ycsb.DBException;
 import com.yahoo.ycsb.Status;
 import com.yahoo.ycsb.ByteIterator;
-import com.yahoo.ycsb.StringByteIterator;
 
 /**
  * YCSB binding for
- * <a href="http://www.project-voldemort.com/voldemort/">Voldemort</a>.
+ * <a href="http://www.erlang.org">Distribtued Erlang</a>.
  */
 public class DistributedErlang extends DB {
-  private static final Logger LOGGER = Logger.getLogger(VoldemortClient.class);
+  private static final Logger LOGGER = Logger.getLogger(DistributedErlang.class);
 
   private String storeName;
 
@@ -57,8 +54,8 @@ public class DistributedErlang extends DB {
   }
 
   @Override
-  public Status read(String table, String key, Set<String> fields, HashMap<String,String> result) {
-
+  public Status read(String table, String key, Set<String> fields, HashMap<String, ByteIterator> result) {
+    return Status.OK;
   }
 
   @Override
@@ -71,18 +68,18 @@ public class DistributedErlang extends DB {
   @Override
   public Status update(String table, String key,
                        HashMap<String, ByteIterator> values) {
-
+    return Status.OK;
   }
 
   @Override
   public Status insert(String table, String key,
                        HashMap<String, ByteIterator> values) {
-
+    return Status.OK;
   }
 
   @Override
   public Status delete(String table, String key) {
-
+    return Status.OK;
   }
 
 }
