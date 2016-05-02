@@ -1,0 +1,2 @@
+cd $HOME/git/YCSB
+mvn -pl com.yahoo.ycsb:distributed-erlang-binding -am clean package && ./bin/distributed-erlang-run-workload
