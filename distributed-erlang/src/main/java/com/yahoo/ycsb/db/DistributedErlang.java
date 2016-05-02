@@ -17,10 +17,12 @@
 
 package com.yahoo.ycsb.db;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Set;
 import java.util.Vector;
 
+import com.ericsson.otp.erlang.OtpNode;
 import org.apache.log4j.Logger;
 
 import com.yahoo.ycsb.DB;
@@ -45,6 +47,16 @@ public class DistributedErlang extends DB {
    */
   @Override
   public void init() throws DBException {
+    OtpNode node1 = null;
+    OtpNode node2 = null;
+    OtpNode node3 = null;
+    try {
+      node1 = new OtpNode("node1@127.0.0.1");
+      node2 = new OtpNode("node2@127.0.0.1");
+      node3 = new OtpNode("node3@127.0.0.1");
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
 
   }
 
